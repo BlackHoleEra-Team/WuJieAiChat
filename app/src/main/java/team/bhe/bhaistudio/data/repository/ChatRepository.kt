@@ -338,6 +338,7 @@ class ChatRepository(
 
         memoryRepository.add(
             MemoryEntity(
+                id = memoryRepository.nextMemoryId(),
                 contactId = contact.id,
                 summary = body,
                 indexSummary = parsed.keywords.joinToString("；"),
@@ -545,6 +546,7 @@ class ChatRepository(
 
         val added = memoryRepository.addIfNew(
             MemoryEntity(
+                id = memoryRepository.nextMemoryId(),
                 contactId = contact.id,
                 summary = body,
                 indexSummary = parsed.keywords.joinToString("；"),

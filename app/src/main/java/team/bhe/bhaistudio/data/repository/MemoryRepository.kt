@@ -21,6 +21,22 @@ class MemoryRepository(
 ) {
 
     // ─────────────────────────────────────────────────────
+    // 主键分配
+    // ─────────────────────────────────────────────────────
+
+    /** 上一次分配的主键，保证同毫秒内多条新记忆不会因 [System.currentTimeMillis] 重复而互相覆盖 */
+    @Volatile
+    private var lastMemoryId = 0L
+
+    /** 生成单调递增的记忆主键（[MemoryEntity.id] 默认值是时间戳，同毫秒并发会撞主键被 REPLACE 覆盖） */
+    @Synchronized
+    fun nextMemoryId(): Long {
+        val now = System.currentTimeMillis()
+        lastMemoryId = if (now > lastMemoryId) now else lastMemoryId + 1
+        return lastMemoryId
+    }
+
+    // ─────────────────────────────────────────────────────
     // 记忆生命周期（ACTIVE → INACTIVE → RECYCLED）
     // ─────────────────────────────────────────────────────
 

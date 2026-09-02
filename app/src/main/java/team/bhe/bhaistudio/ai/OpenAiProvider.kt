@@ -6,6 +6,7 @@ import kotlinx.coroutines.flow.callbackFlow
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
 import kotlinx.serialization.json.JsonPrimitive
+import kotlinx.serialization.json.JsonNull
 import kotlinx.serialization.json.buildJsonArray
 import kotlinx.serialization.json.buildJsonObject
 import kotlinx.serialization.json.put
@@ -210,10 +211,11 @@ class OpenAiProvider(
         put("messages", buildJsonArray {
             request.history.forEach { msg ->
                 when {
-                    // assistant 的工具调用回合：按 OpenAI 协议写 tool_calls 数组
+                    // assistant 的工具调用回合：按 OpenAI 协议写 tool_calls 数组。
+                    // 部分兼容服务严格要求 content 字段存在（可为 null），显式给 null 更稳
                     msg.toolCalls.isNotEmpty() -> add(buildJsonObject {
                         put("role", "assistant")
-                        msg.content.takeIf { it.isNotBlank() }?.let { put("content", it) }
+                        if (msg.content.isNotBlank()) put("content", msg.content) else put("content", JsonNull)
                         put("tool_calls", buildJsonArray {
                             msg.toolCalls.forEach { tc ->
                                 add(buildJsonObject {

@@ -435,68 +435,41 @@ class ChatViewModel(
                 )
             }
 
-            // 有工具调用：执行后注入结果，下一轮让它产出正文
-            var handled = false
-            for (tool in result.toolCalls) {
-                when (tool.name) {
-                    "web_search" -> {
-                        val query = runCatching {
-                            json.decodeFromString<WebSearchArgs>(tool.arguments).query
-                        }.getOrNull()
-                        if (query.isNullOrBlank()) continue
-                        val search = chatRepository.executeWebSearch(query)
-                        if (search.isSuccess) {
-                            currentRequest = buildSearchFollowupRequest(currentRequest, search.getOrThrow())
-                            handled = true
-                        } else {
-                            // 搜索失败：弹提示指引用户，终止对话
-                            _events.emit(
-                                getApplication<Application>().withAppLanguage().getString(
-                                    R.string.chat_search_failed_format,
-                                    search.exceptionOrNull()?.message
-                                        ?: getApplication<Application>().withAppLanguage().getString(R.string.common_unknown_error)
-                                )
-                            )
-                            return null
-                        }
-                    }
-
-                    "save_memory" -> {
-                        // 静默保存（自动记忆的 UI 提示条只在流式路径展示）
-                        runCatching {
-                            chatRepository.handleSaveMemoryTool(contact, conversationId, tool.arguments)
-                        }
-                        // 告知模型记忆已在后台处理，请继续完成回复
-                        currentRequest = buildMemoryFollowupRequest(currentRequest)
-                        handled = true
-                    }
-
-                    "recall" -> {
-                        // 按需回忆：检索记忆正文并注入，让本轮直接产出回复
-                        val query = runCatching {
-                            json.decodeFromString<RecallArgs>(tool.arguments).query
-                        }.getOrNull()
-                        if (query.isNullOrBlank()) continue
-                        val recalled = chatRepository.recallMemory(contact.id, query)
-                        if (recalled.isNotBlank()) {
-                            currentRequest = buildRecallFollowupRequest(currentRequest, recalled)
-                            handled = true
-                        }
-                    }
-
-                    "rescore" -> {
-                        // 重新评定记忆重要性：命中沉睡记忆会一并唤醒
-                        val args = runCatching {
-                            json.decodeFromString<RescoreArgs>(tool.arguments)
-                        }.getOrNull()
-                        if (args == null || args.query.isBlank()) continue
-                        chatRepository.rescoreMemory(contact.id, args.query, args.importance)
-                        currentRequest = buildRescoreFollowupRequest(currentRequest)
-                        handled = true
-                    }
-                }
+            // 有工具调用：按标准 tool-calling 回合回写历史（assistant tool_calls + tool 结果），
+            // 下一轮模型能看到"自己调过什么、拿到什么结果"，直到产出正文收尾。
+            val refs = result.toolCalls.map { tc ->
+                ChatToolCallRef(
+                    id = tc.id ?: "call_${System.nanoTime()}_${tc.index}",
+                    name = tc.name,
+                    arguments = tc.arguments
+                )
             }
-            if (!handled) break
+            if (refs.isEmpty()) break
+            currentRequest = currentRequest.copy(
+                history = currentRequest.history + ChatMessageDto(
+                    role = "assistant",
+                    content = "", // 工具轮无正文（有正文会在上方直接收尾返回）
+                    toolCalls = refs
+                )
+            )
+            val toolResults = refs.map { ref ->
+                val out = if (ref.name == "save_memory") {
+                    // 非流式路径没有 startMemorySave，这里同步执行真正的保存
+                    val ok = runCatching {
+                        chatRepository.handleSaveMemoryTool(contact, conversationId, ref.arguments)
+                    }.getOrDefault(false)
+                    if (ok) "【工具 save_memory】该段对话的记忆已保存。" else "【工具 save_memory】没有产生新记忆（内容重复或无需记录）。"
+                } else {
+                    executeAgentTool(contact, conversationId, ref.name, ref.arguments)
+                }
+                ChatMessageDto(
+                    role = "tool",
+                    content = out,
+                    toolCallId = ref.id,
+                    toolName = ref.name
+                )
+            }
+            currentRequest = currentRequest.copy(history = currentRequest.history + toolResults)
         }
         // 两轮后仍无正文（极端情况）：交回已收集的思考，正文为空由落库侧兜底
         return ChatResult(
@@ -550,9 +523,6 @@ class ChatViewModel(
             val toolNames = mutableMapOf<Int, String?>()
             val toolIds = mutableMapOf<Int, String?>()
             val replyGroupId = ChatRepository.newReplyGroupId()
-            var pendingSearch: String? = null
-            val pendingRecallQueries = mutableListOf<String>()
-            var rescoreTriggered = false
             var streamError: String? = null
             var inputTokens = 0
             var outputTokens = 0
@@ -615,9 +585,6 @@ class ChatViewModel(
                         if (toolNames.values.contains("save_memory")) {
                             startMemorySave(contact, conversationId, toolCalls, toolNames)
                         }
-                        pendingSearch = extractWebSearchQuery(toolCalls, toolNames)
-                        pendingRecallQueries += extractRecallQueries(toolCalls, toolNames)
-                        rescoreTriggered = toolNames.values.contains("rescore")
                     }
 
                     is StreamChunk.Error -> {
@@ -716,44 +683,6 @@ class ChatViewModel(
     }
 
     /**
-     * 从工具调用里提取 web_search 的搜索关键词。
-     * arguments 是分片拼接后的 JSON，容错解析。
-     */
-    private fun extractWebSearchQuery(
-        toolCalls: Map<Int, List<String>>,
-        toolNames: Map<Int, String?>
-    ): String? {
-        for ((index, deltas) in toolCalls) {
-            if (toolNames[index] == "web_search") {
-                val argsJson = deltas.joinToString("")
-                val query = runCatching {
-                    json.decodeFromString<WebSearchArgs>(argsJson).query
-                }.getOrNull()
-                if (!query.isNullOrBlank()) return query
-            }
-        }
-        return null
-    }
-
-    /** 从工具调用里提取所有 recall 的查询词（可能多个，合并检索） */
-    private fun extractRecallQueries(
-        toolCalls: Map<Int, List<String>>,
-        toolNames: Map<Int, String?>
-    ): List<String> {
-        val queries = mutableListOf<String>()
-        for ((index, deltas) in toolCalls) {
-            if (toolNames[index] == "recall") {
-                val argsJson = deltas.joinToString("")
-                val query = runCatching {
-                    json.decodeFromString<RecallArgs>(argsJson).query
-                }.getOrNull()
-                if (!query.isNullOrBlank()) queries += query
-            }
-        }
-        return queries.distinct()
-    }
-
-    /**
      * 标准 agent loop：把本轮的流式工具分片组装成协议无关的调用回合。
      * index → 完整 arguments；name / id 在首个分片出现（缺失时本地生成占位 id）。
      */
@@ -828,54 +757,6 @@ class ChatViewModel(
         }
 
         else -> "【工具 $name】不可用，请勿再调用。"
-    }
-
-    /** 构造搜索结果回填请求：把搜索结果作为一条 user 消息注入历史末尾 */
-    private fun buildSearchFollowupRequest(request: ChatRequest, results: String): ChatRequest {
-        val injected = ChatMessageDto(
-            role = "user",
-            content = "请使用以下网络搜索结果回答我的问题：\n\n$results\n\n（工具已执行完毕，请直接给出最终回答，不要再调用任何工具。）"
-        )
-        return request.copy(history = request.history + injected)
-    }
-
-    /** 构造 save_memory 之后的续写请求：告知模型记忆已在后台处理，请完成最终回复 */
-    private fun buildMemoryFollowupRequest(request: ChatRequest): ChatRequest {
-        val injected = ChatMessageDto(
-            role = "user",
-            content = "【系统】你刚才调用了 save_memory 工具保存这段对话的记忆，保存已在后台进行。" +
-                "请直接完成对用户最后一条消息的回复，不要再调用任何工具。"
-        )
-        return request.copy(history = request.history + injected)
-    }
-
-    /** 构造 recall 之后的续写请求：把取回的记忆作为一条 user 消息注入 */
-    private fun buildRecallFollowupRequest(request: ChatRequest, recalled: String): ChatRequest {
-        Log.d("ChatFlow", "buildRecallFollowupRequest recalledLen=${recalled.length} historyBefore=${request.history.size}")
-        val injected = ChatMessageDto(
-            role = "user",
-            content = "请结合下面取回的记忆完成对用户最后一条消息的回复。记忆内容已取回完整，请直接作答，不要再调用 recall 或任何工具：\n\n$recalled"
-        )
-        return request.copy(history = request.history + injected)
-    }
-
-    /** recall 0 命中时的兜底续写：强制直接作答，避免第二轮空转导致正文消失 */
-    private fun buildRecallFallbackRequest(request: ChatRequest): ChatRequest {
-        Log.d("ChatFlow", "buildRecallFallbackRequest historyBefore=${request.history.size}")
-        val injected = ChatMessageDto(
-            role = "user",
-            content = "【系统】刚才的按需回忆没有检索到更详细的记忆。请不要再调用任何工具，直接根据你已知的信息（包括系统提示中的记忆索引）如实回答用户的问题。若确实不知道就明说不知道。"
-        )
-        return request.copy(history = request.history + injected)
-    }
-
-    /** 构造 rescore 之后的续写请求：告知重要性评定已生效 */
-    private fun buildRescoreFollowupRequest(request: ChatRequest): ChatRequest {
-        val injected = ChatMessageDto(
-            role = "user",
-            content = "【系统】你刚才重新评定的记忆重要性已生效。请直接完成对用户最后一条消息的回复，不要再调用任何工具。"
-        )
-        return request.copy(history = request.history + injected)
     }
 
     /**
