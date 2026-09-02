@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 文件提供路径：仅暴露缓存目录下的 export 子目录（聊天记录导出） -->
+<paths>
+    <cache-path
+        name="export"
+        path="export/" />
+</paths>

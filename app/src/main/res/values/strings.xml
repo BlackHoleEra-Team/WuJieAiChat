@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 应用名 -->
+    <string name="app_name">无界</string>
+
+    <!-- 通用 -->
+    <string name="common_back">返回</string>
+    <string name="common_cancel">取消</string>
+    <string name="common_more">更多操作</string>
+    <string name="common_save">保存</string>
+    <string name="common_delete">删除</string>
+    <string name="common_copy">复制</string>
+    <string name="common_copied">已复制</string>
+
+    <!-- 底部 Tab -->
+    <string name="tab_chat">聊天</string>
+    <string name="tab_contacts">通讯录</string>
+    <string name="tab_profile">我的</string>
+
+    <!-- 主页（会话列表） -->
+    <string name="home_title">无界</string>
+    <string name="home_empty">还没有会话\n去「通讯录」添加一个 AI 角色吧</string>
+    <string name="contacts_count_format">%1$d 个角色</string>
+
+    <!-- 通讯录 -->
+    <string name="contacts_title">通讯录</string>
+    <string name="contacts_empty">通讯录还是空的\n点右下角 + 创建一个 AI 角色吧</string>
+    <string name="fab_new_contact">新建角色</string>
+    <string name="fab_add_contact">添加角色</string>
+    <string name="add_contact_manual">手动录入</string>
+    <string name="add_contact_json">通过 JSON 创建</string>
+    <string name="add_contact_qr">通过二维码创建</string>
+
+    <!-- 角色菜单 -->
+    <string name="menu_edit_contact">编辑角色</string>
+    <string name="menu_memory">记忆管理</string>
+    <string name="menu_share">分享</string>
+    <string name="menu_delete_contact">删除角色</string>
+
+    <!-- 分享角色 -->
+    <string name="share_export_json_file">导出为 JSON（文件）</string>
+    <string name="share_copy_json">复制为 JSON</string>
+    <string name="share_export_qr">导出为二维码</string>
+    <string name="toast_exported">已导出</string>
+    <string name="toast_export_failed">导出失败</string>
+    <string name="toast_copied_json">角色卡片已复制为 JSON</string>
+    <string name="toast_copy_failed">复制失败</string>
+
+    <!-- 角色二维码 -->
+    <string name="qr_export_title">角色二维码</string>
+    <string name="qr_export_hint">让对方用无界的「扫一扫」识别，即可创建这个角色</string>
+    <string name="qr_too_large">这个角色的人设等内容太长，二维码放不下。\n请改用「导出为 JSON（文件）」分享。</string>
+    <string name="qr_save_to_gallery">保存到相册</string>
+    <string name="qr_close">关闭</string>
+    <string name="qr_saved">已保存：%1$s</string>
+    <string name="qr_save_failed">保存失败</string>
+
+    <!-- 导入角色 -->
+    <string name="import_json_title">通过 JSON 创建</string>
+    <string name="import_json_placeholder">粘贴无界角色卡片 JSON</string>
+    <string name="import_json_pick_file">从文件选择</string>
+    <string name="import_json_confirm">导入</string>
+    <string name="toast_read_file_failed">读取文件失败</string>
+    <string name="toast_invalid_card">不是有效的无界角色卡片 JSON（缺少 name 字段）</string>
+    <string name="import_qr_title">通过二维码创建</string>
+    <string name="import_qr_camera">相机扫描</string>
+    <string name="import_qr_gallery">从相册图片识别</string>
+    <string name="import_qr_multi_title">识别到 %1$d 个角色码</string>
+    <string name="import_unnamed_contact">未命名角色</string>
+    <string name="toast_no_card_in_image">未在图片中识别到无界角色码</string>
+
+    <!-- 扫一扫 -->
+    <string name="scan_title">扫一扫</string>
+    <string name="menu_scan">扫一扫</string>
+
+    <!-- 会话列表 -->
+    <string name="chat_preview_empty">点击开始对话</string>
+    <string name="time_today">今天</string>
+    <string name="time_yesterday">昨天</string>
+    <string name="scan_frame_hint">将二维码放入框内</string>
+    <string name="scan_waiting_permission">等待相机授权…</string>
+    <string name="scan_permission_required">需要相机权限才能扫码</string>
+    <string name="scan_permission_rationale">扫描二维码可以打开网页，或导入无界角色卡片</string>
+    <string name="scan_retry_permission">重新授权</string>
+    <string name="toast_scan_result_copied">已复制扫描结果：%1$s</string>
+
+    <!-- 通用补充 -->
+    <string name="common_unknown_error">未知错误</string>
+
+    <!-- 聊天页 -->
+    <string name="chat_title_default">对话</string>
+    <string name="chat_typing">正在输入…</string>
+    <string name="chat_open_settings">对话设置</string>
+    <string name="chat_message_actions_desc">消息操作</string>
+    <string name="chat_copy_thinking">复制思考</string>
+    <string name="chat_save_as_memory">存为记忆</string>
+    <string name="chat_regenerate">重新生成</string>
+    <string name="chat_input_placeholder">发消息…</string>
+    <string name="chat_send_desc">发送</string>
+    <string name="chat_name_fallback_ai">AI</string>
+    <string name="chat_name_fallback_me">我</string>
+    <string name="chat_unknown_provider">该服务商</string>
+    <string name="chat_api_block_title_no_key">未设置 API Key</string>
+    <string name="chat_api_block_title_unavailable">服务商不可用</string>
+    <string name="chat_api_block_body_no_key">「%1$s」使用的「%2$s」尚未设置密钥，请先前往服务商管理填写。</string>
+    <string name="chat_api_block_body_unavailable">「%1$s」上次测试不可用，请检查 API Key 或网络后再试。</string>
+    <string name="common_go_settings">去设置</string>
+    <string name="chat_context_exhausted_title">上下文已耗尽</string>
+    <string name="chat_context_exhausted_body">当前对话的上下文已接近模型窗口上限，请到「对话设置」中压缩历史对话后再继续。</string>
+    <string name="chat_go_compress">去设置压缩</string>
+    <string name="chat_memory_saving">正在保存记忆…</string>
+    <string name="chat_memory_saved">已保存到记忆</string>
+    <string name="chat_memory_save_failed">保存记忆失败</string>
+    <string name="chat_memory_generating">正在生成记忆…</string>
+    <string name="chat_memory_saved_format">已保存记忆：%1$s</string>
+    <string name="chat_search_failed_format">网络搜索失败：%1$s。请在「设置 → 网络搜索」中检查配置</string>
+
+    <!-- 角色编辑页 -->
+    <string name="contact_edit_title_new">新建角色</string>
+    <string name="contact_edit_title_edit">编辑角色</string>
+    <string name="contact_avatar_desc">角色头像</string>
+    <string name="contact_pick_avatar_desc">选择头像</string>
+    <string name="contact_avatar_hint">点击选择头像（不选则显示首字）</string>
+    <string name="contact_name_label">角色名字</string>
+    <string name="contact_name_placeholder">比如：小满</string>
+    <string name="contact_provider_label">服务商</string>
+    <string name="contact_provider_placeholder">请选择服务商</string>
+    <string name="contact_provider_no_key_format">「%1$s」尚未设置 API Key，保存后暂时无法聊天</string>
+    <string name="contact_model_label">模型</string>
+    <string name="contact_model_placeholder_manual">手动输入模型名</string>
+    <string name="contact_model_placeholder_choose">选择或手动输入</string>
+    <string name="contact_model_pick_desc">选择模型</string>
+    <string name="contact_prompt_label">人设 (system prompt)</string>
+    <string name="contact_prompt_placeholder">你是一个温柔的朋友，叫我……</string>
+    <string name="contact_roleplay_title">角色扮演</string>
+    <string name="contact_roleplay_subtitle">拟人化分段回复（自动联动开启「关闭流式传输」）</string>
+    <string name="contact_disable_streaming_title">关闭流式传输</string>
+    <string name="contact_disable_streaming_subtitle">开启后回复一次性完整出现，不逐字流式展示</string>
+    <string name="contact_delay_title">延迟发送</string>
+    <string name="contact_delay_subtitle">等待 AI 完整回复，延迟多久由 AI 决定；等待时顶部显示「正在输入」</string>
+    <string name="contact_advanced_title">高级参数</string>
+    <string name="contact_advanced_subtitle">联网搜索 / 深度思考 / 采样参数</string>
+    <string name="contact_deepthink_title">深度思考</string>
+    <string name="contact_deepthink_subtitle">开启后展示推理过程</string>
+    <string name="contact_websearch_title">联网搜索</string>
+    <string name="contact_websearch_subtitle_on">已开启：选择下方的搜索方式</string>
+    <string name="contact_websearch_subtitle_off">需要实时信息时联网获取</string>
+    <string name="contact_search_official_title">使用官方网络搜索</string>
+    <string name="contact_search_official_subtitle">使用服务商内置搜索（需服务商支持）</string>
+    <string name="contact_search_custom_title">使用自定义联网搜索 API</string>
+    <string name="contact_search_custom_subtitle">Firecrawl / Tavily / Bing / serper</string>
+    <string name="contact_search_missing">尚未配置自定义搜索 API</string>
+    <string name="contact_go_config">去配置</string>
+    <string name="contact_slider_temperature">温度 %1$s</string>
+    <string name="contact_slider_top_p">Top P %1$s</string>
+    <string name="contact_slider_thinking_budget">思考预算 %1$s</string>
+    <string name="contact_context_window_label">上下文窗口（token）</string>
+    <string name="contact_context_window_placeholder">0 = 按模型自动推断</string>
+    <string name="contact_error_name_required">请填写角色名字</string>
+    <string name="contact_error_provider_required">请选择服务商</string>
+    <string name="contact_error_model_required">请填写模型名</string>
+
+    <!-- 对话设置页 -->
+    <string name="chat_settings_title_format">%1$s - 设置</string>
+    <string name="chat_settings_token_stats">Token 统计</string>
+    <string name="chat_settings_token_total">累计消耗 %1$s tokens</string>
+    <string name="chat_settings_token_desc">自安装以来全部模型调用的 token 累计（服务商返回的真实用量，缺省时本地估算）</string>
+    <string name="chat_settings_logs_entry">聊天记录管理</string>
+    <string name="chat_settings_logs_subtitle">导出 / 清空与 TA 的聊天记录</string>
+    <string name="chat_settings_compress_success_title">压缩成功</string>
+    <string name="chat_settings_compress_success_body">上下文已压缩，历史对话已整理为摘要，可以继续聊天了。</string>
+    <string name="chat_settings_got_it">知道了</string>
+    <string name="chat_settings_context_status_critical">严重：上下文即将耗尽，请尽快压缩</string>
+    <string name="chat_settings_context_status_warn">警告：上下文占用较高</string>
+    <string name="chat_settings_context_status_ok">状态良好</string>
+    <string name="chat_settings_context_title">上下文窗口</string>
+    <string name="chat_settings_context_used">已用 %1$s / %2$s tokens</string>
+    <string name="chat_settings_compress_action">压缩上下文</string>
+    <string name="chat_settings_compressing_title">正在压缩上下文</string>
+    <string name="chat_settings_compressing_subtitle">正在把历史对话整理为摘要…</string>
+
+    <!-- 聊天记录管理页 -->
+    <string name="chatlogs_title">聊天记录管理</string>
+    <string name="chatlogs_browse_title">浏览聊天记录</string>
+    <string name="chatlogs_empty">还没有聊天记录，去聊聊吧。</string>
+    <string name="chatlogs_stats_title_format">与「%1$s」的对话</string>
+    <string name="chatlogs_stat_total_label">消息总数</string>
+    <string name="chatlogs_stat_total_value">%1$d 条 · 你 %2$d · %3$s %4$d</string>
+    <string name="chatlogs_stat_span_label">时间跨度</string>
+    <string name="chatlogs_stat_span_value">%1$s → %2$s</string>
+    <string name="chatlogs_stat_context_label">估算上下文</string>
+    <string name="chatlogs_stat_size_label">约占空间</string>
+    <string name="chatlogs_role_you">你</string>
+    <string name="chatlogs_ai_fallback">AI</string>
+    <string name="chatlogs_delete_record_title">删除这条记录？</string>
+
+    <string name="chatlogs_delete_group_body">这是一条分段回复，将删除整轮消息。</string>
+    <string name="chatlogs_delete_single_body">将删除这条消息。</string>
+    <string name="chatlogs_delete">@string/common_delete</string>
+    <string name="chatlogs_delete_desc">@string/common_delete</string>
+    <string name="chatlogs_clear_title">清空聊天记录？</string>
+    <string name="chatlogs_clear_body">将删除与「%1$s」的全部 %2$d 条消息，此操作不可恢复。建议先导出备份。</string>
+    <string name="chatlogs_clear">清空</string>
+    <string name="chatlogs_clear_action">清空聊天记录</string>
+    <string name="chatlogs_danger_title">危险操作</string>
+    <string name="chatlogs_clear_desc">清空与这个角色的全部聊天记录，不可恢复。建议先导出备份。</string>
+    <string name="chatlogs_export_title">导出聊天记录</string>
+    <string name="chatlogs_export_desc">导出为 Markdown（适合阅读归档）或 JSON（适合备份迁移），将通过系统分享面板保存或发送。</string>
+    <string name="chatlogs_export_busy">正在生成导出文件…</string>
+    <string name="chatlogs_deleted">已删除</string>
+    <string name="chatlogs_export_failed">导出失败，请重试</string>
+    <string name="chatlogs_cleared">聊天记录已清空</string>
+    <string name="chatlogs_file_md">对话记录.md</string>
+    <string name="chatlogs_file_json">对话记录.json</string>
+    <string name="chatlogs_md_heading"># 与「%1$s」的对话</string>
+    <string name="chatlogs_md_exported">&gt; 导出于 %1$s</string>
+    <string name="chatlogs_md_persona">&gt; 人设：%1$s</string>
+    <string name="chatlogs_md_count">&gt; 共 %1$d 条消息</string>
+    <string name="chatlogs_role_user">用户</string>
+    <string name="chatlogs_thinking_summary">思考过程</string>
+    <string name="chatlogs_md_end">（导出结束）</string>
+
+    <!-- 通用设置页 -->
+    <string name="settings_title">通用设置</string>
+    <string name="settings_section_memory">记忆</string>
+    <string name="settings_section_context">上下文</string>
+    <string name="settings_section_search">网络搜索</string>
+    <string name="settings_section_appearance">外观</string>
+    <string name="settings_auto_memory_title">自动记忆</string>
+    <string name="settings_auto_memory_subtitle">角色自主判断重要事件，静默存入短期/长期记忆（需模型支持工具调用）</string>
+    <string name="settings_send_memory_title">发送长短期记忆</string>
+    <string name="settings_send_memory_subtitle">把已保存的长期/短期记忆注入 system prompt（含手动保存的），让 AI 记得你们聊过什么</string>
+    <string name="settings_context_rounds_label">上下文轮数</string>
+    <string name="settings_context_rounds_support">发给 AI 的最近对话轮数，控制它能看到多少对话，与记忆无关</string>
+    <string name="settings_search_custom_title">自定义联网搜索</string>
+    <string name="settings_search_custom_subtitle">配置 Firecrawl / Tavily / Bing / serper 供角色使用</string>
+    <string name="settings_theme_title">主题模式</string>
+    <string name="settings_theme_system">跟随系统</string>
+    <string name="settings_theme_light">浅色</string>
+    <string name="settings_theme_dark">深色</string>
+    <string name="settings_language_title">语言</string>
+    <string name="settings_language_system">跟随系统</string>
+    <string name="settings_language_zh">中文</string>
+    <string name="settings_language_en">English</string>
+    <string name="settings_language_ja">日本語</string>
+    <string name="settings_language_zh_hk">繁體中文（香港）</string>
+    <string name="settings_language_zh_tw">繁體中文（台灣）</string>
+    <string name="settings_language_restart_hint">部分文字需重启应用后才会完全切换</string>
+    <string name="settings_dynamic_color_title">动态取色</string>
+    <string name="settings_dynamic_color_subtitle">Android 12+ 跟随壁纸配色（Material You）</string>
+
+    <!-- 网络搜索设置页 -->
+    <string name="search_title">网络搜索设置</string>
+    <string name="search_header_title">自定义联网搜索</string>
+    <string name="search_header_desc">支持 Firecrawl、Tavily Search、Bing Web Search API、serper.dev。\n配置多条时，聊天自动使用列表中的第一条。</string>
+    <string name="search_configured_format">已配置（共 %1$d 条）</string>
+    <string name="search_add_title">添加搜索 API</string>
+    <string name="search_add">添加</string>
+
+    <!-- 服务商管理页 -->
+    <string name="providers_title">服务商管理</string>
+    <string name="providers_testing_title">正在测试服务商</string>
+    <string name="providers_testing_body">正在测试「%1$s」的连接可用性…</string>
+    <string name="providers_test_ok_title">连接正常</string>
+    <string name="providers_test_fail_title">连接失败</string>
+    <string name="providers_test_result_ok">「%1$s」可用 ✓</string>
+    <string name="providers_test_result_fail">「%1$s」不可用 ✕，请检查 API Key 或网络</string>
+    <string name="providers_ok">好的</string>
+    <string name="providers_intro">已内置 %1$d 家服务商，地址都填好了\n展开卡片，填入你的 API Key 即可使用</string>
+    <string name="providers_no_match">没有匹配「%1$s」的服务商</string>
+    <string name="providers_search_placeholder">搜索服务商</string>
+    <string name="providers_clear_search">清空</string>
+    <string name="providers_preset_chip">预设</string>
+    <string name="providers_key_set">已设置 API-Key</string>
+    <string name="providers_key_clear">清除</string>
+    <string name="providers_save_key">保存密钥</string>
+    <string name="providers_fetching">拉取中…</string>
+    <string name="providers_fetch_models">拉取模型列表</string>
+    <string name="providers_models_more">模型：%1$s… 等 %2$d 个</string>
+    <string name="providers_models_preview">模型：%1$s</string>
+    <string name="providers_preset_models_note">预设模型仅供参考，保存密钥后会自动拉取该账号的真实模型</string>
+    <string name="providers_aliyun_new_title">新版接口（WorkspaceId 方式）</string>
+    <string name="providers_aliyun_new_active">当前使用新版域名（旧域名仍兼容），可恢复旧版公共域名。</string>
+    <string name="providers_aliyun_new_hint">新控制台用户推荐使用新版接口，填写 WorkspaceId 即可。</string>
+    <string name="providers_apply">应用</string>
+    <string name="providers_restore_legacy">恢复旧版公共域名</string>
+    <string name="providers_delete_custom">删除此服务商</string>
+    <string name="providers_add_custom_title">添加自定义服务商</string>
+    <string name="providers_add_custom_desc">任意 OpenAI 兼容服务（中转站 / 自建网关）都能接</string>
+    <string name="providers_name_label">名称</string>
+    <string name="providers_name_placeholder">我的中转站</string>
+    <string name="providers_add">添加</string>
+    <string name="providers_hint_testing">正在测试连接…</string>
+    <string name="providers_hint_ok_fetching">连接正常，正在拉取模型…</string>
+    <string name="providers_hint_fail_keep">连接失败，已保留原密钥；请检查网络或新密钥是否正确</string>
+    <string name="providers_hint_fail">连接失败，请检查密钥或网络</string>
+    <string name="providers_hint_models_empty">该服务返回了空模型列表，可手填</string>
+    <string name="providers_hint_models_fetched">拉取到 %1$d 个模型</string>
+    <string name="providers_hint_models_error">拉取失败：%1$s</string>
+    <string name="providers_hint_aliyun_new">已切换到新版接口</string>
+    <string name="providers_hint_aliyun_legacy">已恢复旧版公共域名</string>
+
+    <!-- 记忆管理页 -->
+    <string name="memory_title">记忆管理</string>
+    <string name="memory_tab_all">全部</string>
+    <string name="memory_tab_short">短期</string>
+    <string name="memory_tab_long">长期</string>
+    <string name="memory_empty_format">还没有%1$s记忆\n在聊天中点击 AI 消息旁的 ⋮ 菜单\n选择「存为记忆」即可保存</string>
+    <string name="memory_empty_none">还没有记忆\n在聊天中点击 AI 消息旁的 ⋮ 菜单\n选择「存为记忆」即可保存</string>
+    <string name="memory_search_hint">搜索记忆</string>
+    <string name="memory_search_empty">没有匹配的记忆</string>
+    <string name="memory_delete_desc">删除记忆</string>
+    <string name="memory_clear_all_desc">清空全部记忆</string>
+
+    <!-- 头像裁切页 -->
+    <string name="avatar_crop_hint">拖动、双指缩放，调整头像区域</string>
+    <string name="avatar_crop_saving">处理中…</string>
+    <string name="avatar_crop_confirm">使用此头像</string>
+
+    <!-- 我的页 -->
+    <string name="common_confirm">确定</string>
+    <string name="profile_default_name">无界用户</string>
+    <string name="profile_providers_subtitle">DeepSeek / Kimi / Claude / Gemini… 30 家预设一键接入</string>
+    <string name="profile_settings_subtitle">分段回复、延迟发送、历史记忆、主题</string>
+    <string name="profile_about_subtitle">版本 · 能力 · 技术栈</string>
+    <string name="profile_avatar_desc">头像</string>
+    <string name="profile_change_avatar_desc">更换头像</string>
+    <string name="profile_change_nickname_desc">修改昵称</string>
+    <string name="profile_slogan">AI 角色陪伴 · 把你的联系人变成有记忆的朋友</string>
+    <string name="profile_nickname_dialog_title">修改昵称</string>
+    <string name="profile_nickname_label">昵称</string>
+
+    <!-- 关于页 -->
+    <string name="about_title">关于</string>
+    <string name="about_app_icon_desc">应用图标</string>
+    <string name="about_version_format">v%1$s · Material 3 Expressive</string>
+    <string name="about_section_what">这是什么</string>
+    <string name="about_section_features">核心能力</string>
+    <string name="about_section_stack">技术栈</string>
+    <string name="about_section_credits">开源鸣谢</string>
+    <string name="about_section_license">协议</string>
+    <string name="about_what_body">无界是一款 AI 角色陪伴应用。把你的联系人变成有记忆、有人设、会主动聊天的朋友——支持 DeepSeek / Kimi / Claude / Gemini 等数十家模型服务商，一条 API Key 即可接入。</string>
+    <string name="about_feature_roleplay_title">角色扮演</string>
+    <string name="about_feature_roleplay_sub">人设驱动 + 拟人化回复节奏</string>
+    <string name="about_feature_segment_title">分段回复</string>
+    <string name="about_feature_segment_sub">像真人一样分段发出，而不是一次性流式</string>
+    <string name="about_feature_memory_title">长期记忆</string>
+    <string name="about_feature_memory_sub">角色记得你们聊过什么</string>
+    <string name="about_feature_deepthink_title">深度思考</string>
+    <string name="about_feature_deepthink_sub">独立展示推理过程，可开关</string>
+    <string name="about_feature_search_title">联网搜索</string>
+    <string name="about_feature_search_sub">支持的服务商自动启用</string>
+    <string name="about_feature_providers_title">30 家服务商</string>
+    <string name="about_feature_providers_sub">地址内置，填 Key 即用，可自定义接入</string>
+    <string name="about_feature_color_title">动态取色</string>
+    <string name="about_feature_color_sub">Material You 跟随壁纸配色</string>
+    <string name="about_stack_body">Kotlin + Jetpack Compose\nMaterial 3 Expressive · Navigation3\nRoom · DataStore · Koin · OkHttp SSE\nCoil</string>
+    <string name="about_credits_title">开源项目与许可证</string>
+    <string name="about_credits_subtitle">本项目基于以下开源库构建</string>
+    <string name="about_license_body">仅供学习与个人使用。模型能力归各服务商所有。</string>
+    <string name="about_licenses_dialog_title">开源项目鸣谢</string>
+    <string name="about_license_compose_desc">声明式 UI 框架与主题</string>
+    <string name="about_license_icons_desc">图标库</string>
+    <string name="about_license_navigation_desc">声明式导航</string>
+    <string name="about_license_room_desc">本地数据库</string>
+    <string name="about_license_datastore_desc">键值存储</string>
+    <string name="about_license_koin_desc">依赖注入</string>
+    <string name="about_license_okhttp_desc">网络与 SSE 流式</string>
+    <string name="about_license_coroutines_desc">协程</string>
+    <string name="about_license_serialization_desc">序列化</string>
+    <string name="about_license_coil_desc">图片加载</string>
+    <string name="about_license_paging_desc">列表分页</string>
+
+    <!-- 聊天气泡组件 -->
+    <string name="reasoning_thinking">正在思考…</string>
+    <string name="reasoning_done_format">已完成思考 (%1$ss)</string>
+    <string name="reasoning_title">思考过程</string>
+    <string name="reasoning_collapse">收起</string>
+    <string name="reasoning_expand">展开</string>
+    <!-- 数据迁移 -->
+    <string name="settings_section_data">数据</string>
+    <string name="transfer_entry_title">数据迁移</string>
+    <string name="transfer_entry_subtitle">通过局域网把数据迁移到另一台设备</string>
+    <string name="transfer_main_title">数据迁移</string>
+    <string name="transfer_main_subtitle">在同一 WiFi 下，把本机的角色、聊天与记忆完整迁移到另一台设备。传输全程加密，传输中请保持页面常亮。</string>
+    <string name="transfer_export_card">导出数据</string>
+    <string name="transfer_export_card_sub">我是旧设备，把数据发给对方</string>
+    <string name="transfer_import_card">导入数据</string>
+    <string name="transfer_import_card_sub">我是新设备，接收对方的数据</string>
+
+    <string name="import_top_title">接收数据</string>
+    <string name="import_listening">正在等待连接…</string>
+    <string name="import_listening_hint">在另一台设备进入「导出数据」，扫描下方的二维码（或手动输入本机地址）。</string>
+    <string name="import_connection">连接信息</string>
+    <string name="import_qr_hint">请对方扫描此二维码</string>
+    <string name="import_cancel">取消接收</string>
+    <string name="import_incoming_title">接收来自「%1$s」的数据？</string>
+    <string name="import_incoming_body">对方会把它的角色、聊天记录与记忆完整发送过来。\n本机当前的数据将被清除，是否继续？</string>
+    <string name="import_accept">接受并开始传输</string>
+    <string name="import_reject">拒绝</string>
+    <string name="import_transferring">正在接收数据…</string>
+    <string name="import_done_title">传输完成</string>
+    <string name="import_restart">正在重启以完成迁移…</string>
+    <string name="import_error_title">接收失败</string>
+    <string name="import_retry">重新接收</string>
+
+    <string name="export_top_title">导出数据</string>
+    <string name="export_step1">1. 在目标设备打开：设置 → 数据迁移 → 导入数据，让它进入接收模式</string>
+    <string name="export_step2">2. 在本页扫描目标设备的二维码（或手动输入地址）</string>
+    <string name="export_scan">扫描二维码</string>
+    <string name="export_manual">手动连接</string>
+    <string name="export_host">IP 地址</string>
+    <string name="export_port">端口</string>
+    <string name="export_token">令牌</string>
+    <string name="export_connect">连接并发送</string>
+    <string name="export_preparing">正在打包数据…</string>
+    <string name="export_connecting">正在连接对方…</string>
+    <string name="export_transferring">正在传输数据…</string>
+    <string name="export_done">已完整发送给「%1$s」</string>
+    <string name="export_back">完成</string>
+    <string name="export_error_title">发送失败</string>
+    <string name="export_retry">重试</string>
+    <string name="transfer_cancel">取消</string>
+
+    <!-- 拾忆区（记忆生命周期） -->
+    <string name="recycle_title">拾忆</string>
+    <string name="recycle_profile_subtitle">找回被遗忘与删除的记忆</string>
+    <string name="recycle_subtitle">被遗忘或删除的记忆会安静地存放在这里，随时可以找回。</string>
+    <string name="recycle_restore">找回</string>
+    <string name="recycle_restored">已找回这条记忆</string>
+    <string name="recycle_empty">这里还空空的</string>
+    <string name="recycle_empty_hint">沉睡太久的记忆会来到这里，删除的记忆也会在这里等待。</string>
+    <string name="recycle_auto_clear">自动清空时间</string>
+    <string name="recycle_auto_clear_hint">在拾忆区超过此时长的记忆会被永久删除</string>
+    <string name="recycle_auto_clear_never">从不</string>
+    <string name="recycle_auto_clear_days">%1$d 天</string>
+    <string name="recycle_clear_all">立即清空拾忆</string>
+    <string name="recycle_clear_confirm_title">清空拾忆？</string>
+    <string name="recycle_clear_confirm_body">将永久删除拾忆区中的全部记忆，此操作无法撤销。</string>
+    <string name="recycle_confirm_clear">永久删除</string>
+    <string name="memory_state_active">活跃</string>
+    <string name="memory_state_inactive">沉睡</string>
+    <string name="memory_importance_line">重要度 %1$d</string>
+
+    <!-- 流式中断兜底（工具轮次耗尽等） -->
+    <string name="chat_reply_interrupted">（这轮回复没有完成。请换一种说法再问一次。）</string>
+    <string name="chat_tool_round_exhausted">（这轮回复反复调用工具仍未完成，已达到单次问答的工具使用轮次上限。请换个说法再问一次。）</string>
+</resources>

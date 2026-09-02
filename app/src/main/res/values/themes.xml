@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+      Compose 项目只需要一个"空壳"平台主题。
+      刻意不引入 Material Components（com.google.android.material），
+      避免 View 体系主题与 Compose 主题打架。
+      所有视觉都由 WuJieTheme 接管。
+    -->
+    <style name="Theme.WuJie" parent="android:Theme.Material.Light.NoActionBar" />
+</resources>

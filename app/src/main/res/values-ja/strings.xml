@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- アプリ名 -->
+    <string name="app_name">無界</string>
+
+    <!-- 共通 -->
+    <string name="common_back">戻る</string>
+    <string name="common_cancel">キャンセル</string>
+    <string name="common_more">その他の操作</string>
+    <string name="common_save">保存</string>
+    <string name="common_delete">削除</string>
+    <string name="common_copy">コピー</string>
+    <string name="common_copied">コピーしました</string>
+
+    <!-- 下部タブ -->
+    <string name="tab_chat">チャット</string>
+    <string name="tab_contacts">連絡先</string>
+    <string name="tab_profile">マイ</string>
+
+    <!-- ホーム（会話一覧） -->
+    <string name="home_title">無界</string>
+    <string name="home_empty">会話はまだありません\n「連絡先」から AI キャラクターを追加しましょう</string>
+    <string name="contacts_count_format">%1$d 体のキャラクター</string>
+
+    <!-- 連絡先 -->
+    <string name="contacts_title">連絡先</string>
+    <string name="contacts_empty">連絡先は空です\n右下の + から AI キャラクターを作りましょう</string>
+    <string name="fab_new_contact">新規キャラクター</string>
+    <string name="fab_add_contact">キャラクターを追加</string>
+    <string name="add_contact_manual">手動入力</string>
+    <string name="add_contact_json">JSON から作成</string>
+    <string name="add_contact_qr">QRコードから作成</string>
+
+    <!-- キャラクターメニュー -->
+    <string name="menu_edit_contact">キャラクターを編集</string>
+    <string name="menu_memory">記憶</string>
+    <string name="menu_share">共有</string>
+    <string name="menu_delete_contact">キャラクターを削除</string>
+
+    <!-- キャラクター共有 -->
+    <string name="share_export_json_file">JSON として書き出し（ファイル）</string>
+    <string name="share_copy_json">JSON をコピー</string>
+    <string name="share_export_qr">QRコードを書き出し</string>
+    <string name="toast_exported">書き出しました</string>
+    <string name="toast_export_failed">書き出しに失敗しました</string>
+    <string name="toast_copied_json">キャラクターカードを JSON としてコピーしました</string>
+    <string name="toast_copy_failed">コピーに失敗しました</string>
+
+    <!-- キャラクター QRコード -->
+    <string name="qr_export_title">キャラクター QRコード</string>
+    <string name="qr_export_hint">相手に無界の「スキャン」で読み取ってもらうと、このキャラクターを作成できます</string>
+    <string name="qr_too_large">このキャラクターの設定が長すぎて QRコードに入りきりません。\n「JSON として書き出し（ファイル）」で共有してください。</string>
+    <string name="qr_save_to_gallery">アルバムに保存</string>
+    <string name="qr_close">閉じる</string>
+    <string name="qr_saved">保存しました：%1$s</string>
+    <string name="qr_save_failed">保存に失敗しました</string>
+
+    <!-- キャラクターインポート -->
+    <string name="import_json_title">JSON から作成</string>
+    <string name="import_json_placeholder">無界キャラクターカードの JSON を貼り付け</string>
+    <string name="import_json_pick_file">ファイルを選択</string>
+    <string name="import_json_confirm">インポート</string>
+    <string name="toast_read_file_failed">ファイルの読み込みに失敗しました</string>
+    <string name="toast_invalid_card">有効な無界キャラクターカード JSON ではありません（name フィールドがありません）</string>
+    <string name="import_qr_title">QRコードから作成</string>
+    <string name="import_qr_camera">カメラでスキャン</string>
+    <string name="import_qr_gallery">アルバム画像から認識</string>
+    <string name="import_qr_multi_title">%1$d 個のキャラクターコードを検出</string>
+    <string name="import_unnamed_contact">無名キャラクター</string>
+    <string name="toast_no_card_in_image">画像から無界キャラクターコードを検出できませんでした</string>
+
+    <!-- スキャン -->
+    <string name="scan_title">スキャン</string>
+    <string name="menu_scan">スキャン</string>
+
+    <!-- 会話一覧 -->
+    <string name="chat_preview_empty">タップして会話を開始</string>
+    <string name="time_today">今日</string>
+    <string name="time_yesterday">昨日</string>
+    <string name="scan_frame_hint">QRコードを枠内に置いてください</string>
+    <string name="scan_waiting_permission">カメラ権限を待機中…</string>
+    <string name="scan_permission_required">スキャンにはカメラ権限が必要です</string>
+    <string name="scan_permission_rationale">QRコードをスキャンすると、ウェブページを開いたり、無界キャラクターカードをインポートできます</string>
+    <string name="scan_retry_permission">再許可</string>
+    <string name="toast_scan_result_copied">スキャン結果をコピーしました：%1$s</string>
+
+    <!-- 共通補足 -->
+    <string name="common_unknown_error">不明なエラー</string>
+
+    <!-- チャット画面 -->
+    <string name="chat_title_default">会話</string>
+    <string name="chat_typing">入力中…</string>
+    <string name="chat_open_settings">会話設定</string>
+    <string name="chat_message_actions_desc">メッセージ操作</string>
+    <string name="chat_copy_thinking">思考をコピー</string>
+    <string name="chat_save_as_memory">記憶として保存</string>
+    <string name="chat_regenerate">再生成</string>
+    <string name="chat_input_placeholder">メッセージ…</string>
+    <string name="chat_send_desc">送信</string>
+    <string name="chat_name_fallback_ai">AI</string>
+    <string name="chat_name_fallback_me">私</string>
+    <string name="chat_unknown_provider">このプロバイダー</string>
+    <string name="chat_api_block_title_no_key">API Key が設定されていません</string>
+    <string name="chat_api_block_title_unavailable">プロバイダーが利用できません</string>
+    <string name="chat_api_block_body_no_key">「%1$s」が使用する「%2$s」に API Key が設定されていません。先にプロバイダー管理で入力してください。</string>
+    <string name="chat_api_block_body_unavailable">「%1$s」は前回のテストに失敗しました。API Key かネットワークを確認して再試行してください。</string>
+    <string name="common_go_settings">設定へ</string>
+    <string name="chat_context_exhausted_title">コンテキストが上限に達しました</string>
+    <string name="chat_context_exhausted_body">この会話のコンテキストがモデルの上限に近づいています。「会話設定」で履歴を圧縮してから続けてください。</string>
+    <string name="chat_go_compress">圧縮設定へ</string>
+    <string name="chat_memory_saving">記憶を保存中…</string>
+    <string name="chat_memory_saved">記憶に保存しました</string>
+    <string name="chat_memory_save_failed">記憶の保存に失敗しました</string>
+    <string name="chat_memory_generating">記憶を生成中…</string>
+    <string name="chat_memory_saved_format">記憶を保存しました：%1$s</string>
+    <string name="chat_search_failed_format">ウェブ検索に失敗しました：%1$s。「設定 → ネット検索」で設定を確認してください</string>
+
+    <!-- キャラクター編集画面 -->
+    <string name="contact_edit_title_new">新規キャラクター</string>
+    <string name="contact_edit_title_edit">キャラクターを編集</string>
+    <string name="contact_avatar_desc">キャラクターアバター</string>
+    <string name="contact_pick_avatar_desc">アバターを選択</string>
+    <string name="contact_avatar_hint">タップしてアバターを選択（未選択時は頭文字を表示）</string>
+    <string name="contact_name_label">キャラクター名</string>
+    <string name="contact_name_placeholder">例：小满</string>
+    <string name="contact_provider_label">プロバイダー</string>
+    <string name="contact_provider_placeholder">プロバイダーを選択</string>
+    <string name="contact_provider_no_key_format">「%1$s」に API Key が設定されていません。設定されるまでチャットできません</string>
+    <string name="contact_model_label">モデル</string>
+    <string name="contact_model_placeholder_manual">モデル名を手動入力</string>
+    <string name="contact_model_placeholder_choose">選択または手動入力</string>
+    <string name="contact_model_pick_desc">モデルを選択</string>
+    <string name="contact_prompt_label">キャラ設定 (system prompt)</string>
+    <string name="contact_prompt_placeholder">あなたは優しい友人で、私のことを…</string>
+    <string name="contact_roleplay_title">ロールプレイ</string>
+    <string name="contact_roleplay_subtitle">人間らしい分割返信（「ストリーミング無効」を自動的にオン）</string>
+    <string name="contact_disable_streaming_title">ストリーミング無効</string>
+    <string name="contact_disable_streaming_subtitle">オンにすると返信が一括表示され、逐次表示されません</string>
+    <string name="contact_delay_title">遅延送信</string>
+    <string name="contact_delay_subtitle">AI の完全な返信を待ちます。待ち時間は AI が決めます。待機中はタイトルバーに「入力中…」を表示</string>
+    <string name="contact_advanced_title">詳細設定</string>
+    <string name="contact_advanced_subtitle">ネット検索 / ディープシンキング / サンプリングパラメータ</string>
+    <string name="contact_deepthink_title">ディープシンキング</string>
+    <string name="contact_deepthink_subtitle">オンにすると推論過程を表示します</string>
+    <string name="contact_websearch_title">ネット検索</string>
+    <string name="contact_websearch_subtitle_on">オン：下の検索方法を選択してください</string>
+    <string name="contact_websearch_subtitle_off">リアルタイム情報が必要なときにネット検索</string>
+    <string name="contact_search_official_title">公式ネット検索を使用</string>
+    <string name="contact_search_official_subtitle">プロバイダー内蔵の検索を使用（プロバイダーの対応が必要）</string>
+    <string name="contact_search_custom_title">カスタム検索 API を使用</string>
+    <string name="contact_search_custom_subtitle">Firecrawl / Tavily / Bing / serper</string>
+    <string name="contact_search_missing">カスタム検索 API が未設定です</string>
+    <string name="contact_go_config">設定する</string>
+    <string name="contact_slider_temperature">温度 %1$s</string>
+    <string name="contact_slider_top_p">Top P %1$s</string>
+    <string name="contact_slider_thinking_budget">思考予算 %1$s</string>
+    <string name="contact_context_window_label">コンテキストウィンドウ（token）</string>
+    <string name="contact_context_window_placeholder">0 = モデルから自動推測</string>
+    <string name="contact_error_name_required">キャラクター名を入力してください</string>
+    <string name="contact_error_provider_required">プロバイダーを選択してください</string>
+    <string name="contact_error_model_required">モデル名を入力してください</string>
+
+    <!-- 会話設定画面 -->
+    <string name="chat_settings_title_format">%1$s - 設定</string>
+    <string name="chat_settings_token_stats">Token 統計</string>
+    <string name="chat_settings_token_total">累計 %1$s tokens</string>
+    <string name="chat_settings_token_desc">インストール以来の全モデル呼び出しの累計 token（プロバイダーが返した実用量。無い場合はローカル推定）</string>
+    <string name="chat_settings_logs_entry">メッセージ履歴</string>
+    <string name="chat_settings_logs_subtitle">履歴の書き出し / クリア</string>
+    <string name="chat_settings_compress_success_title">圧縮完了</string>
+    <string name="chat_settings_compress_success_body">コンテキストを圧縮し、履歴を要約に整理しました。会話を続けられます。</string>
+    <string name="chat_settings_got_it">了解</string>
+    <string name="chat_settings_context_status_critical">深刻：コンテキストが上限間近、すぐに圧縮してください</string>
+    <string name="chat_settings_context_status_warn">警告：コンテキスト使用率が高いです</string>
+    <string name="chat_settings_context_status_ok">良好</string>
+    <string name="chat_settings_context_title">コンテキストウィンドウ</string>
+    <string name="chat_settings_context_used">使用 %1$s / %2$s tokens</string>
+    <string name="chat_settings_compress_action">コンテキストを圧縮</string>
+    <string name="chat_settings_compressing_title">コンテキストを圧縮中</string>
+    <string name="chat_settings_compressing_subtitle">履歴を要約に整理しています…</string>
+
+    <!-- メッセージ履歴画面 -->
+    <string name="chatlogs_title">メッセージ履歴</string>
+    <string name="chatlogs_browse_title">メッセージを閲覧</string>
+    <string name="chatlogs_empty">メッセージはまだありません。会話してみましょう。</string>
+    <string name="chatlogs_stats_title_format">「%1$s」との会話</string>
+    <string name="chatlogs_stat_total_label">メッセージ数</string>
+    <string name="chatlogs_stat_total_value">全 %1$d 件 · あなた %2$d · %3$s %4$d</string>
+    <string name="chatlogs_stat_span_label">期間</string>
+    <string name="chatlogs_stat_span_value">%1$s → %2$s</string>
+    <string name="chatlogs_stat_context_label">推定コンテキスト</string>
+    <string name="chatlogs_stat_size_label">概算サイズ</string>
+    <string name="chatlogs_role_you">あなた</string>
+    <string name="chatlogs_ai_fallback">AI</string>
+    <string name="chatlogs_delete_record_title">この記録を削除しますか？</string>
+    <string name="chatlogs_delete_group_body">これは分割返信の一部です。グループ全体が削除されます。</string>
+    <string name="chatlogs_delete_single_body">このメッセージが削除されます。</string>
+    <string name="chatlogs_delete">@string/common_delete</string>
+    <string name="chatlogs_delete_desc">@string/common_delete</string>
+    <string name="chatlogs_clear_title">全メッセージを削除しますか？</string>
+    <string name="chatlogs_clear_body">「%1$s」との全 %2$d 件のメッセージが削除されます。元に戻せません。必要なら先にバックアップを書き出してください。</string>
+    <string name="chatlogs_clear">削除</string>
+    <string name="chatlogs_clear_action">履歴をクリア</string>
+    <string name="chatlogs_danger_title">危険な操作</string>
+    <string name="chatlogs_clear_desc">このキャラクターとの全チャット履歴を削除します。元に戻せません。先にバックアップを推奨します。</string>
+    <string name="chatlogs_export_title">履歴を書き出し</string>
+    <string name="chatlogs_export_desc">Markdown（読みやすい保存用）または JSON（バックアップ/移行用）で書き出し。システム共有シートで保存または送信します。</string>
+    <string name="chatlogs_export_busy">書き出しファイルを生成中…</string>
+    <string name="chatlogs_deleted">削除しました</string>
+    <string name="chatlogs_export_failed">書き出しに失敗しました。再試行してください</string>
+    <string name="chatlogs_cleared">履歴をクリアしました</string>
+    <string name="chatlogs_file_md">conversation.md</string>
+    <string name="chatlogs_file_json">conversation.json</string>
+    <string name="chatlogs_md_heading"># 「%1$s」との会話</string>
+    <string name="chatlogs_md_exported">&gt; %1$s に書き出し</string>
+    <string name="chatlogs_md_persona">&gt; キャラ設定：%1$s</string>
+    <string name="chatlogs_md_count">&gt; 全 %1$d 件のメッセージ</string>
+    <string name="chatlogs_role_user">ユーザー</string>
+    <string name="chatlogs_thinking_summary">思考過程</string>
+    <string name="chatlogs_md_end">（書き出し終了）</string>
+
+    <!-- 一般設定画面 -->
+    <string name="settings_title">設定</string>
+    <string name="settings_section_memory">記憶</string>
+    <string name="settings_section_context">コンテキスト</string>
+    <string name="settings_section_search">ネット検索</string>
+    <string name="settings_section_appearance">外観</string>
+    <string name="settings_auto_memory_title">自動記憶</string>
+    <string name="settings_auto_memory_subtitle">キャラクターが重要な出来事を判断し、静かに短期/長期記憶に保存（ツール呼び出し対応が必要）</string>
+    <string name="settings_send_memory_title">記憶をプロンプトに送信</string>
+    <string name="settings_send_memory_subtitle">保存済みの短期/長期記憶（手動保存含む）を system prompt に注入し、AI が話した内容を覚えているようにします</string>
+    <string name="settings_context_rounds_label">コンテキストのラウンド数</string>
+    <string name="settings_context_rounds_support">AI に送る最近の会話ラウンド数。AI がどれだけ見られるかを制御（記憶とは無関係）</string>
+    <string name="settings_search_custom_title">カスタムネット検索</string>
+    <string name="settings_search_custom_subtitle">Firecrawl / Tavily / Bing / serper を設定してキャラクターに利用</string>
+    <string name="settings_theme_title">テーマ</string>
+    <string name="settings_theme_system">システムに従う</string>
+    <string name="settings_theme_light">ライト</string>
+    <string name="settings_theme_dark">ダーク</string>
+    <string name="settings_language_title">言語</string>
+    <string name="settings_language_system">システムに従う</string>
+    <string name="settings_language_zh">中文</string>
+    <string name="settings_language_en">English</string>
+    <string name="settings_language_ja">日本語</string>
+    <string name="settings_language_zh_hk">繁體中文（香港）</string>
+    <string name="settings_language_zh_tw">繁體中文（台灣）</string>
+    <string name="settings_language_restart_hint">一部の文字はアプリを再起動すると完全に切り替わります</string>
+    <string name="settings_dynamic_color_title">ダイナミックカラー</string>
+    <string name="settings_dynamic_color_subtitle">Android 12+ 壁紙連動配色（Material You）</string>
+
+    <!-- ネット検索設定画面 -->
+    <string name="search_title">ネット検索設定</string>
+    <string name="search_header_title">カスタムネット検索</string>
+    <string name="search_header_desc">Firecrawl、Tavily Search、Bing Web Search API、serper.dev に対応。\n複数設定時、チャットではリストの最初が自動で使用されます。</string>
+    <string name="search_configured_format">設定済み（%1$d）</string>
+    <string name="search_add_title">検索 API を追加</string>
+    <string name="search_add">追加</string>
+
+    <!-- プロバイダー管理画面 -->
+    <string name="providers_title">プロバイダー管理</string>
+    <string name="providers_testing_title">プロバイダーをテスト中</string>
+    <string name="providers_testing_body">「%1$s」の接続をテスト中…</string>
+    <string name="providers_test_ok_title">接続OK</string>
+    <string name="providers_test_fail_title">接続失敗</string>
+    <string name="providers_test_result_ok">「%1$s」は利用可能 ✓</string>
+    <string name="providers_test_result_fail">「%1$s」は利用不可 ✕、API Key かネットワークを確認してください</string>
+    <string name="providers_ok">OK</string>
+    <string name="providers_intro">%1$d 社のプロバイダーが内蔵され、エンドポイントは準備済み\nカードを展開して API Key を入力するだけです</string>
+    <string name="providers_no_match">「%1$s」に一致するプロバイダーがありません</string>
+    <string name="providers_search_placeholder">プロバイダーを検索</string>
+    <string name="providers_clear_search">クリア</string>
+    <string name="providers_preset_chip">プリセット</string>
+    <string name="providers_key_set">API-Key 設定済み</string>
+    <string name="providers_key_clear">クリア</string>
+    <string name="providers_save_key">キーを保存</string>
+    <string name="providers_fetching">取得中…</string>
+    <string name="providers_fetch_models">モデル一覧を取得</string>
+    <string name="providers_models_more">モデル：%1$s… ほか %2$d 件</string>
+    <string name="providers_models_preview">モデル：%1$s</string>
+    <string name="providers_preset_models_note">プリセットモデルは参考用です。キー保存後にそのアカウントの実モデルを自動取得します</string>
+    <string name="providers_aliyun_new_title">新版 API（WorkspaceId 方式）</string>
+    <string name="providers_aliyun_new_active">現在新版ドメインを使用中（旧ドメインも互換）。旧版共通ドメインに戻せます。</string>
+    <string name="providers_aliyun_new_hint">新コンソール利用者には新版 API を推奨します。WorkspaceId を入力してください。</string>
+    <string name="providers_apply">適用</string>
+    <string name="providers_restore_legacy">旧版共通ドメインに戻す</string>
+    <string name="providers_delete_custom">このプロバイダーを削除</string>
+    <string name="providers_add_custom_title">カスタムプロバイダーを追加</string>
+    <string name="providers_add_custom_desc">OpenAI 互換のサービス（リレー / 自建ゲートウェイ）なら接続可能</string>
+    <string name="providers_name_label">名前</string>
+    <string name="providers_name_placeholder">マイリレー</string>
+    <string name="providers_add">追加</string>
+    <string name="providers_hint_testing">接続をテスト中…</string>
+    <string name="providers_hint_ok_fetching">接続OK、モデルを取得中…</string>
+    <string name="providers_hint_fail_keep">接続失敗。旧キーは保持します。ネットワークか新キーを確認してください</string>
+    <string name="providers_hint_fail">接続失敗。API Key かネットワークを確認してください</string>
+    <string name="providers_hint_models_empty">このプロバイダーは空のモデル一覧を返しました。手動入力も可</string>
+    <string name="providers_hint_models_fetched">%1$d 個のモデルを取得</string>
+    <string name="providers_hint_models_error">取得に失敗：%1$s</string>
+    <string name="providers_hint_aliyun_new">新版 API に切り替えました</string>
+    <string name="providers_hint_aliyun_legacy">旧版共通ドメインを復元しました</string>
+
+    <!-- 記憶管理画面 -->
+    <string name="memory_title">記憶管理</string>
+    <string name="memory_tab_all">すべて</string>
+    <string name="memory_tab_short">短期</string>
+    <string name="memory_tab_long">長期</string>
+    <string name="memory_empty_format">%1$s記憶はまだありません\nチャットで AI メッセージの ⋮ メニューをタップ\n「記憶として保存」を選択すると保存されます</string>
+    <string name="memory_empty_none">記憶はまだありません\nチャットで AI メッセージの ⋮ メニューをタップ\n「記憶として保存」を選択すると保存されます</string>
+    <string name="memory_search_hint">記憶を検索</string>
+    <string name="memory_search_empty">一致する記憶がありません</string>
+    <string name="memory_delete_desc">記憶を削除</string>
+    <string name="memory_clear_all_desc">全記憶を削除</string>
+
+    <!-- アバタークロップ画面 -->
+    <string name="avatar_crop_hint">ドラッグやピンチでアバター範囲を調整</string>
+    <string name="avatar_crop_saving">処理中…</string>
+    <string name="avatar_crop_confirm">このアバターを使う</string>
+
+    <!-- マイ画面 -->
+    <string name="common_confirm">OK</string>
+    <string name="profile_default_name">無界ユーザー</string>
+    <string name="profile_providers_subtitle">DeepSeek / Kimi / Claude / Gemini… 30 社以上のプリセットをワンクリック接続</string>
+    <string name="profile_settings_subtitle">分割返信、遅延送信、記憶、テーマ</string>
+    <string name="profile_about_subtitle">バージョン · 機能 · 技術スタック</string>
+    <string name="profile_avatar_desc">アバター</string>
+    <string name="profile_change_avatar_desc">アバターを変更</string>
+    <string name="profile_change_nickname_desc">ニックネームを編集</string>
+    <string name="profile_slogan">AI キャラクターの同伴 · 連絡先を記憶のある友達に</string>
+    <string name="profile_nickname_dialog_title">ニックネームを編集</string>
+    <string name="profile_nickname_label">ニックネーム</string>
+
+    <!-- このアプリについて -->
+    <string name="about_title">このアプリについて</string>
+    <string name="about_app_icon_desc">アプリアイコン</string>
+    <string name="about_version_format">v%1$s · Material 3 Expressive</string>
+    <string name="about_section_what">これは何？</string>
+    <string name="about_section_features">主な機能</string>
+    <string name="about_section_stack">技術スタック</string>
+    <string name="about_section_credits">オープンソース</string>
+    <string name="about_section_license">ライセンス</string>
+    <string name="about_what_body">無界は AI キャラクター同伴アプリです。連絡先を記憶と個性と自主性のある友達に変えます。DeepSeek / Kimi / Claude / Gemini など数十のモデルプロバイダーに対応し、API Key 1 つで接続できます。</string>
+    <string name="about_feature_roleplay_title">ロールプレイ</string>
+    <string name="about_feature_roleplay_sub">キャラ設定駆動 + 人間らしい返信リズム</string>
+    <string name="about_feature_segment_title">分割返信</string>
+    <string name="about_feature_segment_sub">一括ストリームではなく、人間のように分割して送信</string>
+    <string name="about_feature_memory_title">長期記憶</string>
+    <string name="about_feature_memory_sub">キャラクターは話した内容を覚えています</string>
+    <string name="about_feature_deepthink_title">ディープシンキング</string>
+    <string name="about_feature_deepthink_sub">推論過程を独立表示（オン/オフ可）</string>
+    <string name="about_feature_search_title">ネット検索</string>
+    <string name="about_feature_search_sub">対応プロバイダーで自動有効</string>
+    <string name="about_feature_providers_title">30 社以上のプロバイダー</string>
+    <string name="about_feature_providers_sub">エンドポイント内蔵、Key 入力で即利用。カスタム接続も可</string>
+    <string name="about_feature_color_title">ダイナミックカラー</string>
+    <string name="about_feature_color_sub">Material You 壁紙連動配色</string>
+    <string name="about_stack_body">Kotlin + Jetpack Compose\nMaterial 3 Expressive · Navigation3\nRoom · DataStore · Koin · OkHttp SSE\nCoil</string>
+    <string name="about_credits_title">オープンソースプロジェクトとライセンス</string>
+    <string name="about_credits_subtitle">以下のオープンソースライブラリを利用しています</string>
+    <string name="about_license_body">学習と個人利用のみ。モデルの能力は各プロバイダーに帰属します。</string>
+    <string name="about_licenses_dialog_title">オープンソース謝辞</string>
+    <string name="about_license_compose_desc">宣言的 UI フレームワークとテーマ</string>
+    <string name="about_license_icons_desc">アイコンライブラリ</string>
+    <string name="about_license_navigation_desc">宣言的ナビゲーション</string>
+    <string name="about_license_room_desc">ローカルデータベース</string>
+    <string name="about_license_datastore_desc">キーバリューストレージ</string>
+    <string name="about_license_koin_desc">依存性注入</string>
+    <string name="about_license_okhttp_desc">ネットワーク &amp; SSE ストリーミング</string>
+    <string name="about_license_coroutines_desc">コルーチン</string>
+    <string name="about_license_serialization_desc">シリアライゼーション</string>
+    <string name="about_license_coil_desc">画像読み込み</string>
+    <string name="about_license_paging_desc">リストページング</string>
+
+    <!-- チャットバブルコンポーネント -->
+    <string name="reasoning_thinking">思考中…</string>
+    <string name="reasoning_done_format">思考完了 (%1$ss)</string>
+    <string name="reasoning_title">思考過程</string>
+    <string name="reasoning_collapse">折りたたむ</string>
+    <string name="reasoning_expand">展開</string>
+</resources>

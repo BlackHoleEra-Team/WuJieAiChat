@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App name -->
+    <string name="app_name">WuJie</string>
+
+    <!-- Common -->
+    <string name="common_back">Back</string>
+    <string name="common_cancel">Cancel</string>
+    <string name="common_more">More actions</string>
+    <string name="common_save">Save</string>
+    <string name="common_delete">Delete</string>
+    <string name="common_copy">Copy</string>
+    <string name="common_copied">Copied</string>
+
+    <!-- Bottom tabs -->
+    <string name="tab_chat">Chat</string>
+    <string name="tab_contacts">Contacts</string>
+    <string name="tab_profile">Me</string>
+
+    <!-- Home (conversation list) -->
+    <string name="home_title">WuJie</string>
+    <string name="home_empty">No conversations yet\nGo to Contacts to add an AI character</string>
+    <string name="contacts_count_format">%1$d characters</string>
+
+    <!-- Contacts -->
+    <string name="contacts_title">Contacts</string>
+    <string name="contacts_empty">Contacts are empty\nTap + at the bottom right to create an AI character</string>
+    <string name="fab_new_contact">New character</string>
+    <string name="fab_add_contact">Add character</string>
+    <string name="add_contact_manual">Enter manually</string>
+    <string name="add_contact_json">Create from JSON</string>
+    <string name="add_contact_qr">Create from QR code</string>
+
+    <!-- Character menu -->
+    <string name="menu_edit_contact">Edit character</string>
+    <string name="menu_memory">Memory</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_delete_contact">Delete character</string>
+
+    <!-- Share character -->
+    <string name="share_export_json_file">Export as JSON (file)</string>
+    <string name="share_copy_json">Copy as JSON</string>
+    <string name="share_export_qr">Export as QR code</string>
+    <string name="toast_exported">Exported</string>
+    <string name="toast_export_failed">Export failed</string>
+    <string name="toast_copied_json">Character card copied as JSON</string>
+    <string name="toast_copy_failed">Copy failed</string>
+
+    <!-- Character QR code -->
+    <string name="qr_export_title">Character QR code</string>
+    <string name="qr_export_hint">Have the other party scan with WuJie\'s "Scan" to create this character</string>
+    <string name="qr_too_large">The persona is too long to fit in a QR code.\nPlease share via "Export as JSON (file)" instead.</string>
+    <string name="qr_save_to_gallery">Save to gallery</string>
+    <string name="qr_close">Close</string>
+    <string name="qr_saved">Saved: %1$s</string>
+    <string name="qr_save_failed">Save failed</string>
+
+    <!-- Import character -->
+    <string name="import_json_title">Create from JSON</string>
+    <string name="import_json_placeholder">Paste a WuJie character card JSON</string>
+    <string name="import_json_pick_file">Choose file</string>
+    <string name="import_json_confirm">Import</string>
+    <string name="toast_read_file_failed">Failed to read file</string>
+    <string name="toast_invalid_card">Not a valid WuJie character card JSON (missing name field)</string>
+    <string name="import_qr_title">Create from QR code</string>
+    <string name="import_qr_camera">Scan with camera</string>
+    <string name="import_qr_gallery">Recognize from gallery image</string>
+    <string name="import_qr_multi_title">%1$d character codes found</string>
+    <string name="import_unnamed_contact">Unnamed character</string>
+    <string name="toast_no_card_in_image">No WuJie character code found in the image</string>
+
+    <!-- Scan -->
+    <string name="scan_title">Scan</string>
+    <string name="menu_scan">Scan</string>
+
+    <!-- Conversation list -->
+    <string name="chat_preview_empty">Tap to start chatting</string>
+    <string name="time_today">Today</string>
+    <string name="time_yesterday">Yesterday</string>
+    <string name="scan_frame_hint">Place the QR code inside the frame</string>
+    <string name="scan_waiting_permission">Waiting for camera permission…</string>
+    <string name="scan_permission_required">Camera permission is required to scan</string>
+    <string name="scan_permission_rationale">Scanning QR codes can open web pages or import WuJie character cards</string>
+    <string name="scan_retry_permission">Grant again</string>
+    <string name="toast_scan_result_copied">Scan result copied: %1$s</string>
+
+    <!-- Common extra -->
+    <string name="common_unknown_error">Unknown error</string>
+
+    <!-- Chat screen -->
+    <string name="chat_title_default">Conversation</string>
+    <string name="chat_typing">Typing…</string>
+    <string name="chat_open_settings">Conversation settings</string>
+    <string name="chat_message_actions_desc">Message actions</string>
+    <string name="chat_copy_thinking">Copy thinking</string>
+    <string name="chat_save_as_memory">Save as memory</string>
+    <string name="chat_regenerate">Regenerate</string>
+    <string name="chat_input_placeholder">Message…</string>
+    <string name="chat_send_desc">Send</string>
+    <string name="chat_name_fallback_ai">AI</string>
+    <string name="chat_name_fallback_me">Me</string>
+    <string name="chat_unknown_provider">this provider</string>
+    <string name="chat_api_block_title_no_key">API Key not set</string>
+    <string name="chat_api_block_title_unavailable">Provider unavailable</string>
+    <string name="chat_api_block_body_no_key">"%1$s" uses "%2$s" which has no API Key set. Please add one in Provider Settings first.</string>
+    <string name="chat_api_block_body_unavailable">"%1$s" failed the last test. Please check the API Key or network and try again.</string>
+    <string name="common_go_settings">Go to settings</string>
+    <string name="chat_context_exhausted_title">Context exhausted</string>
+    <string name="chat_context_exhausted_body">This conversation\'s context is close to the model window limit. Please compress the history in Conversation Settings to continue.</string>
+    <string name="chat_go_compress">Go compress</string>
+    <string name="chat_memory_saving">Saving memory…</string>
+    <string name="chat_memory_saved">Saved to memory</string>
+    <string name="chat_memory_save_failed">Failed to save memory</string>
+    <string name="chat_memory_generating">Generating memory…</string>
+    <string name="chat_memory_saved_format">Memory saved: %1$s</string>
+    <string name="chat_search_failed_format">Web search failed: %1$s. Please check the settings in Settings &gt; Web Search</string>
+
+    <!-- Character edit screen -->
+    <string name="contact_edit_title_new">New character</string>
+    <string name="contact_edit_title_edit">Edit character</string>
+    <string name="contact_avatar_desc">Character avatar</string>
+    <string name="contact_pick_avatar_desc">Choose avatar</string>
+    <string name="contact_avatar_hint">Tap to choose an avatar (shows initial if none)</string>
+    <string name="contact_name_label">Character name</string>
+    <string name="contact_name_placeholder">e.g. Xiaoman</string>
+    <string name="contact_provider_label">Provider</string>
+    <string name="contact_provider_placeholder">Select a provider</string>
+    <string name="contact_provider_no_key_format">"%1$s" has no API Key set, chatting won\'t work until it is added</string>
+    <string name="contact_model_label">Model</string>
+    <string name="contact_model_placeholder_manual">Enter model name manually</string>
+    <string name="contact_model_placeholder_choose">Select or enter manually</string>
+    <string name="contact_model_pick_desc">Select model</string>
+    <string name="contact_prompt_label">Persona (system prompt)</string>
+    <string name="contact_prompt_placeholder">You are a gentle friend who calls me…</string>
+    <string name="contact_roleplay_title">Role-play</string>
+    <string name="contact_roleplay_subtitle">Human-like segmented replies (automatically enables "Disable streaming")</string>
+    <string name="contact_disable_streaming_title">Disable streaming</string>
+    <string name="contact_disable_streaming_subtitle">When on, replies appear in full at once instead of streaming word by word</string>
+    <string name="contact_delay_title">Delayed send</string>
+    <string name="contact_delay_subtitle">Wait for the AI\'s complete reply; how long is up to the AI. Shows "Typing…" in the title bar meanwhile</string>
+    <string name="contact_advanced_title">Advanced settings</string>
+    <string name="contact_advanced_subtitle">Web search / Deep thinking / Sampling parameters</string>
+    <string name="contact_deepthink_title">Deep thinking</string>
+    <string name="contact_deepthink_subtitle">Shows the reasoning process when on</string>
+    <string name="contact_websearch_title">Web search</string>
+    <string name="contact_websearch_subtitle_on">On: choose a search method below</string>
+    <string name="contact_websearch_subtitle_off">Search the web when real-time info is needed</string>
+    <string name="contact_search_official_title">Use built-in web search</string>
+    <string name="contact_search_official_subtitle">Use the provider\'s built-in search (requires provider support)</string>
+    <string name="contact_search_custom_title">Use custom web search API</string>
+    <string name="contact_search_custom_subtitle">Firecrawl / Tavily / Bing / serper</string>
+    <string name="contact_search_missing">No custom search API configured</string>
+    <string name="contact_go_config">Configure</string>
+    <string name="contact_slider_temperature">Temperature %1$s</string>
+    <string name="contact_slider_top_p">Top P %1$s</string>
+    <string name="contact_slider_thinking_budget">Thinking budget %1$s</string>
+    <string name="contact_context_window_label">Context window (tokens)</string>
+    <string name="contact_context_window_placeholder">0 = infer from model</string>
+    <string name="contact_error_name_required">Please enter a character name</string>
+    <string name="contact_error_provider_required">Please select a provider</string>
+    <string name="contact_error_model_required">Please enter a model name</string>
+
+    <!-- Conversation settings screen -->
+    <string name="chat_settings_title_format">%1$s - Settings</string>
+    <string name="chat_settings_token_stats">Token usage</string>
+    <string name="chat_settings_token_total">Total: %1$s tokens</string>
+    <string name="chat_settings_token_desc">Cumulative tokens from all model calls since install (real usage reported by providers, local estimate when unavailable)</string>
+    <string name="chat_settings_logs_entry">Message history</string>
+    <string name="chat_settings_logs_subtitle">Export / clear chat history</string>
+    <string name="chat_settings_compress_success_title">Compressed</string>
+    <string name="chat_settings_compress_success_body">The context has been compressed and history is now a summary. You can keep chatting.</string>
+    <string name="chat_settings_got_it">Got it</string>
+    <string name="chat_settings_context_status_critical">Critical: context nearly full, please compress soon</string>
+    <string name="chat_settings_context_status_warn">Warning: context usage is high</string>
+    <string name="chat_settings_context_status_ok">Healthy</string>
+    <string name="chat_settings_context_title">Context window</string>
+    <string name="chat_settings_context_used">Used %1$s / %2$s tokens</string>
+    <string name="chat_settings_compress_action">Compress context</string>
+    <string name="chat_settings_compressing_title">Compressing context</string>
+    <string name="chat_settings_compressing_subtitle">Summarizing the chat history…</string>
+
+    <!-- Chat logs screen -->
+    <string name="chatlogs_title">Message history</string>
+    <string name="chatlogs_browse_title">Browse messages</string>
+    <string name="chatlogs_empty">No messages yet. Go have a chat!</string>
+    <string name="chatlogs_stats_title_format">Conversation with "%1$s"</string>
+    <string name="chatlogs_stat_total_label">Total messages</string>
+    <string name="chatlogs_stat_total_value">%1$d msgs · you %2$d · %3$s %4$d</string>
+    <string name="chatlogs_stat_span_label">Time span</string>
+    <string name="chatlogs_stat_span_value">%1$s → %2$s</string>
+    <string name="chatlogs_stat_context_label">Est. context</string>
+    <string name="chatlogs_stat_size_label">Approx. size</string>
+    <string name="chatlogs_role_you">You</string>
+    <string name="chatlogs_ai_fallback">AI</string>
+    <string name="chatlogs_delete_record_title">Delete this record?</string>
+    <string name="chatlogs_delete_group_body">This is part of a segmented reply; the whole group will be deleted.</string>
+    <string name="chatlogs_delete_single_body">This message will be deleted.</string>
+    <string name="chatlogs_delete">@string/common_delete</string>
+    <string name="chatlogs_delete_desc">@string/common_delete</string>
+    <string name="chatlogs_clear_title">Clear all messages?</string>
+    <string name="chatlogs_clear_body">This will delete all %2$d messages with "%1$s". This cannot be undone. Export a backup first if needed.</string>
+    <string name="chatlogs_clear">Clear</string>
+    <string name="chatlogs_clear_action">Clear history</string>
+    <string name="chatlogs_danger_title">Danger zone</string>
+    <string name="chatlogs_clear_desc">Deletes all chat history with this character. Cannot be undone. Export a backup first.</string>
+    <string name="chatlogs_export_title">Export history</string>
+    <string name="chatlogs_export_desc">Export as Markdown (readable archive) or JSON (backup/migration), saved or shared via the system share sheet.</string>
+    <string name="chatlogs_export_busy">Generating export file…</string>
+    <string name="chatlogs_deleted">Deleted</string>
+    <string name="chatlogs_export_failed">Export failed, please retry</string>
+    <string name="chatlogs_cleared">History cleared</string>
+    <string name="chatlogs_file_md">conversation.md</string>
+    <string name="chatlogs_file_json">conversation.json</string>
+    <string name="chatlogs_md_heading"># Conversation with "%1$s"</string>
+    <string name="chatlogs_md_exported">&gt; Exported on %1$s</string>
+    <string name="chatlogs_md_persona">&gt; Persona: %1$s</string>
+    <string name="chatlogs_md_count">&gt; %1$d messages in total</string>
+    <string name="chatlogs_role_user">User</string>
+    <string name="chatlogs_thinking_summary">Thinking</string>
+    <string name="chatlogs_md_end">(end of export)</string>
+
+    <!-- General settings screen -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_section_memory">Memory</string>
+    <string name="settings_section_context">Context</string>
+    <string name="settings_section_search">Web search</string>
+    <string name="settings_section_appearance">Appearance</string>
+    <string name="settings_auto_memory_title">Auto memory</string>
+    <string name="settings_auto_memory_subtitle">Characters decide what matters and quietly store short/long-term memories (requires tool calling)</string>
+    <string name="settings_send_memory_title">Send memories in prompts</string>
+    <string name="settings_send_memory_subtitle">Inject saved short/long-term memories into the system prompt (including manual ones), so the AI remembers what you talked about</string>
+    <string name="settings_context_rounds_label">Context rounds</string>
+    <string name="settings_context_rounds_support">Recent conversation rounds sent to the AI; controls how much it can see, independent of memory</string>
+    <string name="settings_search_custom_title">Custom web search</string>
+    <string name="settings_search_custom_subtitle">Configure Firecrawl / Tavily / Bing / serper for characters</string>
+    <string name="settings_theme_title">Theme mode</string>
+    <string name="settings_theme_system">Follow system</string>
+    <string name="settings_theme_light">Light</string>
+    <string name="settings_theme_dark">Dark</string>
+    <string name="settings_language_title">Language</string>
+    <string name="settings_language_system">Follow system</string>
+    <string name="settings_language_zh">中文</string>
+    <string name="settings_language_en">English</string>
+    <string name="settings_language_ja">日本語</string>
+    <string name="settings_language_zh_hk">繁體中文（香港）</string>
+    <string name="settings_language_zh_tw">繁體中文（台灣）</string>
+    <string name="settings_language_restart_hint">Some text will fully switch after restarting the app</string>
+    <string name="settings_dynamic_color_title">Dynamic color</string>
+    <string name="settings_dynamic_color_subtitle">Material You wallpaper-based colors (Android 12+)</string>
+
+    <!-- Web search settings screen -->
+    <string name="search_title">Web search settings</string>
+    <string name="search_header_title">Custom web search</string>
+    <string name="search_header_desc">Supports Firecrawl, Tavily Search, Bing Web Search API and serper.dev.\nWith multiple configs, the first one is used automatically in chats.</string>
+    <string name="search_configured_format">Configured (%1$d)</string>
+    <string name="search_add_title">Add search API</string>
+    <string name="search_add">Add</string>
+
+    <!-- Provider settings screen -->
+    <string name="providers_title">Provider settings</string>
+    <string name="providers_testing_title">Testing provider</string>
+    <string name="providers_testing_body">Testing connection for "%1$s"…</string>
+    <string name="providers_test_ok_title">Connection OK</string>
+    <string name="providers_test_fail_title">Connection failed</string>
+    <string name="providers_test_result_ok">"%1$s" is available ✓</string>
+    <string name="providers_test_result_fail">"%1$s" unavailable ✕, check the API Key or network</string>
+    <string name="providers_ok">OK</string>
+    <string name="providers_intro">%1$d providers built in with endpoints ready\nExpand a card, paste your API Key and start using it</string>
+    <string name="providers_no_match">No provider matches "%1$s"</string>
+    <string name="providers_search_placeholder">Search providers</string>
+    <string name="providers_clear_search">Clear</string>
+    <string name="providers_preset_chip">Preset</string>
+    <string name="providers_key_set">API-Key set</string>
+    <string name="providers_key_clear">Clear</string>
+    <string name="providers_save_key">Save key</string>
+    <string name="providers_fetching">Fetching…</string>
+    <string name="providers_fetch_models">Fetch model list</string>
+    <string name="providers_models_more">Models: %1$s… and %2$d more</string>
+    <string name="providers_models_preview">Models: %1$s</string>
+    <string name="providers_preset_models_note">Preset models are for reference; real models are fetched automatically after saving a key</string>
+    <string name="providers_aliyun_new_title">New API (WorkspaceId mode)</string>
+    <string name="providers_aliyun_new_active">Currently using the new domain (legacy still works). You can restore the old public domain.</string>
+    <string name="providers_aliyun_new_hint">New console users: fill in the WorkspaceId to use the new API.</string>
+    <string name="providers_apply">Apply</string>
+    <string name="providers_restore_legacy">Restore legacy domain</string>
+    <string name="providers_delete_custom">Delete this provider</string>
+    <string name="providers_add_custom_title">Add custom provider</string>
+    <string name="providers_add_custom_desc">Any OpenAI-compatible service (relay / self-hosted gateway) can be connected</string>
+    <string name="providers_name_label">Name</string>
+    <string name="providers_name_placeholder">My relay</string>
+    <string name="providers_add">Add</string>
+    <string name="providers_hint_testing">Testing connection…</string>
+    <string name="providers_hint_ok_fetching">Connected, fetching models…</string>
+    <string name="providers_hint_fail_keep">Failed. The old key is kept; check the network or the new key</string>
+    <string name="providers_hint_fail">Failed. Check the API Key or network</string>
+    <string name="providers_hint_models_empty">This provider returned an empty model list; you can enter one manually</string>
+    <string name="providers_hint_models_fetched">Fetched %1$d models</string>
+    <string name="providers_hint_models_error">Fetch failed: %1$s</string>
+    <string name="providers_hint_aliyun_new">Switched to the new API</string>
+    <string name="providers_hint_aliyun_legacy">Restored the legacy domain</string>
+
+    <!-- Memory screen -->
+    <string name="memory_title">Memory</string>
+    <string name="memory_tab_all">All</string>
+    <string name="memory_tab_short">Short-term</string>
+    <string name="memory_tab_long">Long-term</string>
+    <string name="memory_empty_format">No %1$s memories yet\nIn a chat, tap ⋮ next to an AI message\nand choose "Save as memory"</string>
+    <string name="memory_empty_none">No memories yet\nIn a chat, tap ⋮ next to an AI message\nand choose "Save as memory"</string>
+    <string name="memory_search_hint">Search memories</string>
+    <string name="memory_search_empty">No matching memories</string>
+    <string name="memory_delete_desc">Delete memory</string>
+    <string name="memory_clear_all_desc">Clear all memories</string>
+
+    <!-- Avatar crop screen -->
+    <string name="avatar_crop_hint">Drag and pinch to position the avatar area</string>
+    <string name="avatar_crop_saving">Processing…</string>
+    <string name="avatar_crop_confirm">Use this avatar</string>
+
+    <!-- Me screen -->
+    <string name="common_confirm">OK</string>
+    <string name="profile_default_name">WuJie user</string>
+    <string name="profile_providers_subtitle">DeepSeek / Kimi / Claude / Gemini… 30+ presets, one-key connect</string>
+    <string name="profile_settings_subtitle">Segmented replies, delayed send, memory, theme</string>
+    <string name="profile_about_subtitle">Version · Capabilities · Stack</string>
+    <string name="profile_avatar_desc">Avatar</string>
+    <string name="profile_change_avatar_desc">Change avatar</string>
+    <string name="profile_change_nickname_desc">Edit nickname</string>
+    <string name="profile_slogan">AI companion · turn your contacts into friends with memory</string>
+    <string name="profile_nickname_dialog_title">Edit nickname</string>
+    <string name="profile_nickname_label">Nickname</string>
+
+    <!-- About screen -->
+    <string name="about_title">About</string>
+    <string name="about_app_icon_desc">App icon</string>
+    <string name="about_version_format">v%1$s · Material 3 Expressive</string>
+    <string name="about_section_what">What is this</string>
+    <string name="about_section_features">Key features</string>
+    <string name="about_section_stack">Tech stack</string>
+    <string name="about_section_credits">Open source</string>
+    <string name="about_section_license">License</string>
+    <string name="about_what_body">WuJie is an AI companion app. Turn your contacts into friends with memory, personality and initiative — supporting dozens of model providers including DeepSeek / Kimi / Claude / Gemini with just one API Key.</string>
+    <string name="about_feature_roleplay_title">Role-play</string>
+    <string name="about_feature_roleplay_sub">Persona-driven with human-like reply pacing</string>
+    <string name="about_feature_segment_title">Segmented replies</string>
+    <string name="about_feature_segment_sub">Sent segment by segment like a real person, not one long stream</string>
+    <string name="about_feature_memory_title">Long-term memory</string>
+    <string name="about_feature_memory_sub">Characters remember what you talked about</string>
+    <string name="about_feature_deepthink_title">Deep thinking</string>
+    <string name="about_feature_deepthink_sub">Shows the reasoning process, toggleable</string>
+    <string name="about_feature_search_title">Web search</string>
+    <string name="about_feature_search_sub">Auto-enabled on supported providers</string>
+    <string name="about_feature_providers_title">30+ providers</string>
+    <string name="about_feature_providers_sub">Endpoints built in, add a key and go; custom providers supported</string>
+    <string name="about_feature_color_title">Dynamic color</string>
+    <string name="about_feature_color_sub">Material You wallpaper-based colors</string>
+    <string name="about_stack_body">Kotlin + Jetpack Compose\nMaterial 3 Expressive · Navigation3\nRoom · DataStore · Koin · OkHttp SSE\nCoil</string>
+    <string name="about_credits_title">Open source projects &amp; licenses</string>
+    <string name="about_credits_subtitle">Built with the following open source libraries</string>
+    <string name="about_license_body">For learning and personal use only. Model capabilities belong to their respective providers.</string>
+    <string name="about_licenses_dialog_title">Open source credits</string>
+    <string name="about_license_compose_desc">Declarative UI framework &amp; theme</string>
+    <string name="about_license_icons_desc">Icon library</string>
+    <string name="about_license_navigation_desc">Declarative navigation</string>
+    <string name="about_license_room_desc">Local database</string>
+    <string name="about_license_datastore_desc">Key-value storage</string>
+    <string name="about_license_koin_desc">Dependency injection</string>
+    <string name="about_license_okhttp_desc">Networking &amp; SSE streaming</string>
+    <string name="about_license_coroutines_desc">Coroutines</string>
+    <string name="about_license_serialization_desc">Serialization</string>
+    <string name="about_license_coil_desc">Image loading</string>
+    <string name="about_license_paging_desc">List pagination</string>
+
+    <!-- Chat bubble components -->
+    <string name="reasoning_thinking">Thinking…</string>
+    <string name="reasoning_done_format">Finished thinking (%1$ss)</string>
+    <string name="reasoning_title">Thinking</string>
+    <string name="reasoning_collapse">Collapse</string>
+    <string name="reasoning_expand">Expand</string>
+    <!-- Data transfer -->
+    <string name="settings_section_data">Data</string>
+    <string name="transfer_entry_title">Data migration</string>
+    <string name="transfer_entry_subtitle">Transfer data to another device over Wi-Fi</string>
+    <string name="transfer_main_title">Data migration</string>
+    <string name="transfer_main_subtitle">On the same Wi-Fi, fully transfer your characters, chats and memories to another device. The transfer is encrypted end-to-end — keep the screen on while it runs.</string>
+    <string name="transfer_export_card">Export data</string>
+    <string name="transfer_export_card_sub">I’m the old device, send my data out</string>
+    <string name="transfer_import_card">Import data</string>
+    <string name="transfer_import_card_sub">I’m the new device, receive data</string>
+
+    <string name="import_top_title">Receive data</string>
+    <string name="import_listening">Waiting for a connection…</string>
+    <string name="import_listening_hint">On the other device open “Export data” and scan the QR code below (or enter this address manually).</string>
+    <string name="import_connection">Connection info</string>
+    <string name="import_qr_hint">Ask the other device to scan this QR code</string>
+    <string name="import_cancel">Stop receiving</string>
+    <string name="import_incoming_title">Receive data from “%1$s”?</string>
+    <string name="import_incoming_body">They will send their characters, chats and memories to this device.\nYour current data on this device will be cleared. Continue?</string>
+    <string name="import_accept">Accept &amp; transfer</string>
+    <string name="import_reject">Decline</string>
+    <string name="import_transferring">Receiving data…</string>
+    <string name="import_done_title">Transfer complete</string>
+    <string name="import_restart">Restarting to apply migration…</string>
+    <string name="import_error_title">Receive failed</string>
+    <string name="import_retry">Receive again</string>
+
+    <string name="export_top_title">Export data</string>
+    <string name="export_step1">1. On the target device open: Settings → Data migration → Import data, and let it enter receiving mode</string>
+    <string name="export_step2">2. Scan the target device’s QR code here (or enter its address manually)</string>
+    <string name="export_scan">Scan QR code</string>
+    <string name="export_manual">Manual connect</string>
+    <string name="export_host">IP address</string>
+    <string name="export_port">Port</string>
+    <string name="export_token">Token</string>
+    <string name="export_connect">Connect &amp; send</string>
+    <string name="export_preparing">Preparing data…</string>
+    <string name="export_connecting">Connecting…</string>
+    <string name="export_transferring">Transferring data…</string>
+    <string name="export_done">Fully sent to “%1$s”</string>
+    <string name="export_back">Done</string>
+    <string name="export_error_title">Send failed</string>
+    <string name="export_retry">Retry</string>
+    <string name="transfer_cancel">Cancel</string>
+
+    <!-- Keepsake box (memory lifecycle) -->
+    <string name="recycle_title">Keepsakes</string>
+    <string name="recycle_profile_subtitle">Recover forgotten or deleted memories</string>
+    <string name="recycle_subtitle">Forgotten or deleted memories rest here quietly, ready to be brought back anytime.</string>
+    <string name="recycle_restore">Restore</string>
+    <string name="recycle_restored">Memory restored</string>
+    <string name="recycle_empty">Nothing here yet</string>
+    <string name="recycle_empty_hint">Memories that have slept too long come here, and deleted memories wait here too.</string>
+    <string name="recycle_auto_clear">Auto clear after</string>
+    <string name="recycle_auto_clear_hint">Memories kept here longer than this will be permanently deleted</string>
+    <string name="recycle_auto_clear_never">Never</string>
+    <string name="recycle_auto_clear_days">%1$d days</string>
+    <string name="recycle_clear_all">Clear keepsakes now</string>
+    <string name="recycle_clear_confirm_title">Clear keepsakes?</string>
+    <string name="recycle_clear_confirm_body">All memories in the keepsake box will be permanently deleted. This cannot be undone.</string>
+    <string name="recycle_confirm_clear">Delete permanently</string>
+    <string name="memory_state_active">Active</string>
+    <string name="memory_state_inactive">Sleeping</string>
+    <string name="memory_importance_line">Importance %1$d</string>
+
+    <!-- Streaming interrupted fallback (tool rounds exhausted, etc.) -->
+    <string name="chat_reply_interrupted">(This reply wasn\'t completed. Try asking in a different way.)</string>
+    <string name="chat_tool_round_exhausted">(This reply still wasn\'t finished after repeated tool calls \u2014 the per-question tool round limit was reached. Try rephrasing your question.)</string>
+</resources>
