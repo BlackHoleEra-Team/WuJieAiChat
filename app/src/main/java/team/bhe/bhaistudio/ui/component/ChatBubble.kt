@@ -127,11 +127,22 @@ fun ChatBubble(
                 contentColor = contentColor,
                 tonalElevation = if (isFromUser) 0.dp else 1.dp
             ) {
-                Text(
-                    text = text,
-                    style = MaterialTheme.typography.bodyLarge,
-                    modifier = Modifier.padding(horizontal = 14.dp, vertical = 10.dp)
-                )
+                // 含 Markdown 标记（代码块/粗体/行内代码/标题）走增强渲染；
+                // 普通文本保持纯 Text，零额外开销。
+                if (looksLikeMarkdown(text)) {
+                    MarkdownText(
+                        markdown = text,
+                        textColor = contentColor,
+                        modifier = Modifier.padding(horizontal = 14.dp, vertical = 10.dp)
+                    )
+                } else {
+                    Text(
+                        text = text,
+                        style = MaterialTheme.typography.bodyLarge,
+                        color = contentColor,
+                        modifier = Modifier.padding(horizontal = 14.dp, vertical = 10.dp)
+                    )
+                }
             }
 
             Text(
